@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+		{% block main %}
+			<ul class = "flashes">
+				{% for message in messages %}
+				<li>
+					{{ message }}
+				</li>
+				{% endfor %}
+			</ul>
+
+			<form action="", method="POST", name = "setupForm">
+				{{ form.csrf_token }}
+				<h4>
+					Please complete form!
+				</h4>
+
+				<p>Please enter first name</p>
+				{{ form.firstname }}
+
+				<p>Please enter last name</p>
+				{{ form.lastname }}
+				
+				<p>Please enter username</p>
+				{{ form.username }}
+
+				<p>Please enter age</p>
+				{{ form.age }}
+
+				<p>Please enter gender</p>
+				{{ form.sex }}
+
+				<p>Please enter biography</p>
+				{{ form.biography }}
+
+				<p>Please upload image</p>
+				{{ form.image }}
+
+				<p><input type="submit" name="Submit"></p>
+
+			</form>
+		{% endblock %}

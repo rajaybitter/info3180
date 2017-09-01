@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block js %}
+{% endblock %}
+
+{% block main %}
+{{super()}}
+	<div ng-app="web2" ng-controller="homeController">
+		<br>
+		<h1 class="page-header">Welcome {a name a}</h1>
+		<br><br>
+		<button type="button" ng-click="addItem()">Add Item!</button>
+
+		<div name="wishlistItem" ng-repeat="item in items">
+			<div style="padding-top: 20px; padding-left: 100px; padding-right: 100px">
+				<hr/>
+				<div style="padding: 15px">
+					<div id="profile_image" style="float: left;" >
+						<img ng-src="{a item.thumbnail_url a}"
+							style="border:5px solid silver; border-radius: 5px; height: 208px; width: 300px">	
+					</div>
+					<div style="float: left; margin-left: 20px;">	
+						<table style= "border-collapse: collapse;border: 1px solid silver; border-radius:5px;padding: 20px; width: 150%">
+	  						<tr style="background-color: #E5E4E2; border-bottom: 1px solid silver;">
+	    						<th style="text-align: left;padding-left: 25px">
+	    							<h2>
+	    								<strong>{a item.title a}</strong>
+	    							</h2>
+	    						</th>
+	    	
+	  						</tr>
+						  	<tr>
+						    	<td style="padding: 25px">
+									<strong>URL: {a item.url a}</strong>
+									<br/><br/>
+									<strong>Description: </strong>{a item.description a}
+									<br/><br/>
+									<button ng-click="delete(item.id)">Delete!</button>
+									<p style = "visibility:hidden">{a item.id a}</p>
+								</td>  
+						  </tr>
+						</table>
+					</div>
+				</div>
+			</div>	
+		</div>
+	<div>	
+{% endblock %}

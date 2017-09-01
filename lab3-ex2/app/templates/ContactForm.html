@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+{% block js %}
+{% endblock %}
+
+
+{% block main %}
+{{super()}}
+  <form action="" method="post" name="email">
+      
+      <h1>Contact Form</h1>
+      <p>Fill in this form to contact site owners.</p>
+
+      <p>Name</p>
+      <p>Please enter full name</p>
+      {{form.Name}}
+
+      <p>E-mail</p>
+      <p>Please enter your email address</p>
+      {{form.Email}}
+
+      <p>Subject</p>
+      {{form.Subject}}
+
+      <p>Message</p>
+      <p>Please enter the message you want to send</p>
+      {{form.Message}}
+      <p><input type="submit" value="Send"></p>
+  </form>
+{% endblock %}

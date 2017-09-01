@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+{% block js %}
+{% endblock %}
+
+
+{% block main %}
+{{super()}}
+    <div ng-app = "web2" ng-controller = "itemController" class = "form-group">
+      <form ng-submit="submit()"  id="addItem">
+        <br>  
+        
+        Item Name: <input type="text" ng-model="name"><br><br>
+        
+        Description: <input type="text" ng-model="description"><br><br>
+
+        Url: <input type="text" ng-model="url"><br><br>
+
+        Thumbnail Url: <input type="text" ng-model="thumbnail_url"><br><br>        
+        
+        <input type="submit" value="Send" id="submit">
+     	 
+      </form>
+
+      <div ng-repeat = "url in urls track by $index">  
+          <img ng-src="{a url a}" name ="thumbnail_url" ng-model="thumbnail_url" ng-click="create(url)">
+        </div>
+
+    </div>
+{% endblock %}

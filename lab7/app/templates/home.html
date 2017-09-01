@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block main %}
+	<div ng-app="web2" ng-controller="scrapeController">
+		<div ng-repeat="url in urls track by $index">
+			<img ng-src="{a url a}">
+		</div>
+	</div>
+{% endblock %}
